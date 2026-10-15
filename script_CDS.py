@@ -9,32 +9,19 @@ if len(sys.argv) != 8:
     print("Erro: informe a sequencia de DNA e seis coordenadas.")
     sys.exit(1)
 
-# Receber a sequencia de DNA e verificar se e uma string
+# Receber a sequencia de DNA
 sequencia = sys.argv[1]
-
-if not isinstance(sequencia, str):
-    print("Erro: a sequencia de DNA deve ser uma string.")
-    sys.exit(1)
 
 # Verificar se as seis coordenadas sao numeros inteiros positivos
 argumentos = sys.argv[2:]
 
 for argumento in argumentos:
-    if not argumento.isdigit():
+    if not argumento.isdigit() or int(argumento) <= 0:
         print("Erro: as coordenadas devem ser numeros inteiros positivos.")
         sys.exit(1)
 
-# Converter as coordenadas de string para inteiros
+# Converter as coordenadas para inteiros
 n1, n2, n3, n4, n5, n6 = map(int, argumentos)
-
-if any(n <= 0 for n in (n1, n2, n3, n4, n5, n6)):
-    print("Erro: as coordenadas devem ser numeros inteiros positivos.")
-    sys.exit(1)
-
-# Verificar se todas as coordenadas sao positivas
-if any(n <= 0 for n in (n1, n2, n3, n4, n5, n6)):
-    print("Erro: as coordenadas devem ser numeros inteiros positivos.")
-    sys.exit(1)
 
 # Verificar se nenhuma coordenada excede o tamanho da sequencia
 for n in (n1, n2, n3, n4, n5, n6):
@@ -57,17 +44,15 @@ intron1 = sequencia[n2:n3-1]
 intron2 = sequencia[n4:n5-1]
 
 # Verificar se o primeiro intron comeca com GT e termina com AG
-if intron1.startswith("GT") and intron1.endswith("AG"):
+if not (intron1.startswith("GT") and intron1.endswith("AG")):
+    print("Erro: o intron 1 nao comeca com GT ou nao termina com AG.")
+    sys.exit(1)
 
 # Verificar se o segundo intron comeca com GT e termina com AG
-    if intron2.startswith("GT") and intron2.endswith("AG"):
+if not (intron2.startswith("GT") and intron2.endswith("AG")):
+    print("Erro: o intron 2 nao comeca com GT ou nao termina com AG.")
+    sys.exit(1)
 
-    # Concatenar e imprimir as tres CDS
-        sequencia_cds = cds1 + cds2 + cds3
-        print(sequencia_cds)
-
-    else:
-        print("Erro: o intron 2 nao comeca com GT ou nao termina com AG.")
-
-else:
-    print("Erro: o intron 1 nao comeca com GT ou nao termina com AG.")
+# Concatenar e imprimir as tres CDS
+sequencia_cds = cds1 + cds2 + cds3
+print(sequencia_cds)
