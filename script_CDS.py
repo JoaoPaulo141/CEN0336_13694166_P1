@@ -39,7 +39,7 @@ if not (n1 < n2 < n3 < n4 < n5 < n6):
     sys.exit(1)
 
 # Extrair as tres regioes codificantes (CDS)
-cds1 = sequencia[:n2]
+cds1 = sequencia[n1:n2]
 cds2 = sequencia[n3-1:n4]
 cds3 = sequencia[n5-1:n6]
 
