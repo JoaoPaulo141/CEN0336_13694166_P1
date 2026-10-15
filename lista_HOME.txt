@@ -30,7 +30,7 @@ drwx------  2 joao joao      4096 Oct  1 17:45 .ssh
 -rw-r--r--  1 joao joao       399 Apr 22  2025 ANAC092_pep.fasta
 -rw-r--r--  1 joao joao       399 Apr 23  2025 ANAC092_shuffled_1.fasta
 -rw-r--r--  1 joao joao       399 Apr 23  2025 ANAC092_shuffled_2.fasta
-drwxr-xr-x  3 joao joao      4096 Oct 14 19:43 CEN0336_13694166_P1
+drwxr-xr-x  3 joao joao      4096 Oct 14 19:45 CEN0336_13694166_P1
 -rw-r--r--  1 joao joao       189 Oct  1 20:13 Ex12
 -rwxr-xr-x  1 joao joao 154615621 Feb 13  2025 Miniconda3-latest-Linux-x86_64.sh
 -rw-r--r--  1 joao joao       386 Apr 22  2025 NAC_Ppatens.fasta
