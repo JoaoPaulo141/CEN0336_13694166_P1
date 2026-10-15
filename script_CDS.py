@@ -27,6 +27,15 @@ for argumento in argumentos:
 # Converter as coordenadas de string para inteiros
 n1, n2, n3, n4, n5, n6 = map(int, argumentos)
 
+if any(n <= 0 for n in (n1, n2, n3, n4, n5, n6)):
+    print("Erro: as coordenadas devem ser numeros inteiros positivos.")
+    sys.exit(1)
+
+# Verificar se todas as coordenadas sao positivas
+if any(n <= 0 for n in (n1, n2, n3, n4, n5, n6)):
+    print("Erro: as coordenadas devem ser numeros inteiros positivos.")
+    sys.exit(1)
+
 # Verificar se nenhuma coordenada excede o tamanho da sequencia
 for n in (n1, n2, n3, n4, n5, n6):
     if n > len(sequencia):
@@ -39,7 +48,7 @@ if not (n1 < n2 < n3 < n4 < n5 < n6):
     sys.exit(1)
 
 # Extrair as tres regioes codificantes (CDS)
-cds1 = sequencia[n1:n2]
+cds1 = sequencia[n1-1:n2]
 cds2 = sequencia[n3-1:n4]
 cds3 = sequencia[n5-1:n6]
 
